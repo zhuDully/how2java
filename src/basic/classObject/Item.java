@@ -1,6 +1,6 @@
 package basic.classObject;
 /**
- * ÎïÆ·ÀàItem ÓĞÊôĞÔ name,price
+ * ç‰©å“ç±»Item æœ‰å±æ€§ name,price
  * @author zhu_dully
  *
  */

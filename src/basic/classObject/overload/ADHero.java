@@ -5,44 +5,44 @@ import basic.classObject.Hero;
 public class ADHero extends Hero{
 	/*
 	public void attack() {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
-		System.out.println(name+"½øĞĞÁËÒ»´Î¹¥»÷ £¬µ«ÊÇ²»È·¶¨´òÖĞË­ÁË");
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
+		System.out.println(name+"è¿›è¡Œäº†ä¸€æ¬¡æ”»å‡» ï¼Œä½†æ˜¯ä¸ç¡®å®šæ‰“ä¸­è°äº†");
 	}
 	
 	public void attack(Hero h1) {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
-		System.out.println(name+"¶Ô"+h1.name+"½øĞĞÁËÒ»´Î¹¥»÷ ");
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
+		System.out.println(name+"å¯¹"+h1.name+"è¿›è¡Œäº†ä¸€æ¬¡æ”»å‡» ");
 	}
 	public void attack(Hero h1, Hero h2) {
-        System.out.println(name + "Í¬Ê±¶Ô" + h1.name + "ºÍ" + h2.name + "½øĞĞÁË¹¥»÷ ");
+        System.out.println(name + "åŒæ—¶å¯¹" + h1.name + "å’Œ" + h2.name + "è¿›è¡Œäº†æ”»å‡» ");
     }*/
 	
-	// ¿É±äÊıÁ¿µÄ²ÎÊı(È¡´úÉÏÃæÈı¸ö·½·¨)
+	// å¯å˜æ•°é‡çš„å‚æ•°(å–ä»£ä¸Šé¢ä¸‰ä¸ªæ–¹æ³•)
     public void attack(Hero... heros) {
         for (int i = 0; i < heros.length; i++) {
-            System.out.println(name + " ¹¥»÷ÁË " + heros[i].name);
+            System.out.println(name + " æ”»å‡»äº† " + heros[i].name);
  
         }
     }
  
 	public static void main(String[] args) {
 		ADHero bh = new ADHero();
-		bh.name = "ÉÍ½ğÁÔÈË";
+		bh.name = "èµé‡‘çŒäºº";
 		
 		Hero h1 = new Hero();
-		h1.name = "¸ÇÂ×";
+		h1.name = "ç›–ä¼¦";
 		
 		Hero h2 = new Hero();
-		h2.name = "ÌáÄ·";
+		h2.name = "æå§†";
 		
 		//bh.attack(h1);
 		//bh.attack(h1, h2);
 		
 		Support sh = new Support();
-		sh.name = "¶òÇĞ¶û";
-		/*sh.heal();//×ÔÉí¼Óhp£»
-		sh.heal(h2);//¸øÌáÄ·¼ÓÑª
-		sh.heal(h1,40);//¸ø¸ÇÂ×¼ÓÑª40
+		sh.name = "å„åˆ‡å°”";
+		/*sh.heal();//è‡ªèº«åŠ hpï¼›
+		sh.heal(h2);//ç»™æå§†åŠ è¡€
+		sh.heal(h1,40);//ç»™ç›–ä¼¦åŠ è¡€40
 */		
 		sh.heal(10, h1,h2);
 	}

@@ -5,7 +5,7 @@ package basic.classObject.overload;
     protected float hp;
          
     public static void battleWin() {
-        System.out.println("ÎÒÊÇ¸¸ÀàµÄÀà·½·¨");
+        System.out.println("æˆ‘æ˜¯çˆ¶ç±»çš„ç±»æ–¹æ³•");
     }
      
     public String getName() {
@@ -17,23 +17,23 @@ package basic.classObject.overload;
 }
  class ADHero1 extends Hero1{
     public static void battleWin() {
-        System.out.println("ÎÒÊÇADHeroµÄbattleWin()µÄÀà·½·¨");
+        System.out.println("æˆ‘æ˜¯ADHeroçš„battleWin()çš„ç±»æ–¹æ³•");
     }
 }
 /**
- * Òş²Ø
+ * éšè—
  * @author Chen
- * ÓëÖØĞ´ÀàËÆ£¬·½·¨µÄÖØĞ´ÊÇ×ÓÀà¸²¸Ç¸¸ÀàµÄ¶ÔÏó·½·¨
- * Òş²Ø£¬¾ÍÊÇ×ÓÀà¸²¸Ç¸¸ÀàµÄÀà·½·¨
+ * ä¸é‡å†™ç±»ä¼¼ï¼Œæ–¹æ³•çš„é‡å†™æ˜¯å­ç±»è¦†ç›–çˆ¶ç±»çš„å¯¹è±¡æ–¹æ³•
+ * éšè—ï¼Œå°±æ˜¯å­ç±»è¦†ç›–çˆ¶ç±»çš„ç±»æ–¹æ³•
  */
 public class IndexController {
     /**
      * Hero h =new ADHero();
-     * h.battleWin();           //battleWinÊÇÒ»¸öÀà·½·¨
-     * hÊÇ¸¸ÀàÀàĞÍµÄÒıÓÃ
-     * µ«ÊÇÖ¸ÏòÒ»¸ö×ÓÀà¶ÔÏó
-     * h.battleWin(); »áµ÷ÓÃ¸¸ÀàµÄ·½·¨£¿»¹ÊÇ×ÓÀàµÄ·½·¨£¿answer:µ÷ÓÃÁË¸¸ÀàµÄÀà·½·¨
-     * Ö»ÓĞ¡°h2ÊÇ×ÓÀàÀàĞÍµÄÒıÓÃ£¬Ö¸ÏòÒ»¸ö×ÓÀà¶ÔÏó¡±µÄÇé¿ö£¬²Å»áµ÷ÓÃ×ÓÀà±¾ÉíµÄÀà·½·¨
+     * h.battleWin();           //battleWinæ˜¯ä¸€ä¸ªç±»æ–¹æ³•
+     * hæ˜¯çˆ¶ç±»ç±»å‹çš„å¼•ç”¨
+     * ä½†æ˜¯æŒ‡å‘ä¸€ä¸ªå­ç±»å¯¹è±¡
+     * h.battleWin(); ä¼šè°ƒç”¨çˆ¶ç±»çš„æ–¹æ³•ï¼Ÿè¿˜æ˜¯å­ç±»çš„æ–¹æ³•ï¼Ÿanswer:è°ƒç”¨äº†çˆ¶ç±»çš„ç±»æ–¹æ³•
+     * åªæœ‰â€œh2æ˜¯å­ç±»ç±»å‹çš„å¼•ç”¨ï¼ŒæŒ‡å‘ä¸€ä¸ªå­ç±»å¯¹è±¡â€çš„æƒ…å†µï¼Œæ‰ä¼šè°ƒç”¨å­ç±»æœ¬èº«çš„ç±»æ–¹æ³•
      */
     public static void main(String[] args) {
         Hero1 h = new ADHero1();
@@ -43,5 +43,5 @@ public class IndexController {
     }
 }
 /**
- * ¾²Ì¬·½·¨²»»á±»¸²¸Ç
+ * é™æ€æ–¹æ³•ä¸ä¼šè¢«è¦†ç›–
  */

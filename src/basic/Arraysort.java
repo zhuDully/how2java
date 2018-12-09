@@ -4,12 +4,12 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 /**
- * ¶Ô¸´ºÏÊı¾İÀàĞÍµÄÊı¾İµÄÅÅĞò
- ¡¡¡¡º¯ÊıÔ­ĞÍ£º  (1)public static<T> void sort(T[] a£¬Comparator c)  
- 					¸ù¾İÖ¸¶¨±È½ÏÆ÷²úÉúµÄË³Ğò¶ÔÖ¸¶¨¶ÔÏóÊı×é½øĞĞÅÅĞò¡£
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡(2)public static<T> void sort(T[] a£¬int fromIndex£¬int toIndex£¬Comparator c)  
-					¸ù¾İÖ¸¶¨±È½ÏÆ÷²úÉúµÄË³Ğò¶ÔÖ¸¶¨¶ÔÏóÊı×éµÄÖ¸¶¨·¶Î§½øĞĞÅÅĞò¡£¡¡
-¡¡¡¡ËµÃ÷£ºÕâ¸öÁ½¸öÅÅĞòËã·¨ÊÇ¡°¾­¹ıµ÷ÓÅµÄºÏ²¢ÅÅĞò¡±Ëã·¨¡£
+ * å¯¹å¤åˆæ•°æ®ç±»å‹çš„æ•°æ®çš„æ’åº
+ ã€€ã€€å‡½æ•°åŸå‹ï¼š  (1)public static<T> void sort(T[] aï¼ŒComparator c)  
+ 					æ ¹æ®æŒ‡å®šæ¯”è¾ƒå™¨äº§ç”Ÿçš„é¡ºåºå¯¹æŒ‡å®šå¯¹è±¡æ•°ç»„è¿›è¡Œæ’åºã€‚
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€(2)public static<T> void sort(T[] aï¼Œint fromIndexï¼Œint toIndexï¼ŒComparator c)  
+					æ ¹æ®æŒ‡å®šæ¯”è¾ƒå™¨äº§ç”Ÿçš„é¡ºåºå¯¹æŒ‡å®šå¯¹è±¡æ•°ç»„çš„æŒ‡å®šèŒƒå›´è¿›è¡Œæ’åºã€‚ã€€
+ã€€ã€€è¯´æ˜ï¼šè¿™ä¸ªä¸¤ä¸ªæ’åºç®—æ³•æ˜¯â€œç»è¿‡è°ƒä¼˜çš„åˆå¹¶æ’åºâ€ç®—æ³•ã€‚
  * @author zhu_dully
  *
  */
@@ -17,7 +17,7 @@ public class Arraysort {
 	Point[] arr;
 
 	Arraysort() {
-		arr = new Point[4]; // ¶¨Òå¶ÔÏóÊı×éarr£¬²¢·ÖÅä´æ´¢µÄ¿Õ¼ä
+		arr = new Point[4]; // å®šä¹‰å¯¹è±¡æ•°ç»„arrï¼Œå¹¶åˆ†é…å­˜å‚¨çš„ç©ºé—´
 		for (int i = 0; i < 4; i++)
 			arr[i] = new Point();
 	}
@@ -26,7 +26,7 @@ public class Arraysort {
 
 		Arraysort sort = new Arraysort();
 		sort.arr[0].x = 2;
-		sort.arr[0].y = 1; // ³õÊ¼»¯£¬¶ÔÏóÊı×éÖĞµÄÊı¾İ
+		sort.arr[0].y = 1; // åˆå§‹åŒ–ï¼Œå¯¹è±¡æ•°ç»„ä¸­çš„æ•°æ®
 		
 		sort.arr[1].x = 2;
 		sort.arr[1].y = 2;
@@ -37,8 +37,8 @@ public class Arraysort {
 		sort.arr[3].x = 0;
 		sort.arr[3].y = 1;
 
-		Arrays.sort(sort.arr, new MyComprator()); // Ê¹ÓÃÖ¸¶¨µÄÅÅĞòÆ÷£¬½øĞĞÅÅĞò
-		for (int i = 0; i < 4; i++) // Êä³öÅÅĞò½á¹û
+		Arrays.sort(sort.arr, new MyComprator()); // ä½¿ç”¨æŒ‡å®šçš„æ’åºå™¨ï¼Œè¿›è¡Œæ’åº
+		for (int i = 0; i < 4; i++) // è¾“å‡ºæ’åºç»“æœ
 			System.out.println("(" + sort.arr[i].x + "," + sort.arr[i].y + ")");
 	}
 }
@@ -48,7 +48,7 @@ class Point {
 	int y;
 }
 
-// ±È½ÏÆ÷£¬x×ø±ê´ÓĞ¡µ½´óÅÅĞò£»xÏàÍ¬Ê±£¬°´ÕÕy´ÓĞ¡µ½´óÅÅĞò(¿´×öÔÚµÚÒ»ÏóÏŞµÄÅÅĞò)
+// æ¯”è¾ƒå™¨ï¼Œxåæ ‡ä»å°åˆ°å¤§æ’åºï¼›xç›¸åŒæ—¶ï¼ŒæŒ‰ç…§yä»å°åˆ°å¤§æ’åº(çœ‹åšåœ¨ç¬¬ä¸€è±¡é™çš„æ’åº)
 class MyComprator implements Comparator {
 	public int compare(Object arg0, Object arg1) {
 		Point t1 = (Point) arg0;

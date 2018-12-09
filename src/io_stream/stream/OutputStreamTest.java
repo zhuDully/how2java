@@ -7,10 +7,10 @@ import java.io.IOException;
 
 public class OutputStreamTest {
 	public static void main(String[] args) {
-		/*���ֽ�������ʽ���ļ�д������ �е����ӣ���lol2.txt�����ڵ�ʱ���ǻ��Զ�����lol2.txt�ļ��ġ�
-		���ǣ������д�����ݵ�d:/xyz/lol2.txt����Ŀ¼xyz�ֲ����ڵĻ����ͻ��׳��쳣��
-		��ô��ô�Զ�����xyzĿ¼��
-		����Ƕ��Ŀ¼ d:/xyz/abc/def/lol2.txt �أ�*/
+		/*以字节流的形式向文件写入数据 中的例子，当lol2.txt不存在的时候，是会自动创建lol2.txt文件的。
+		但是，如果是写入数据到d:/xyz/lol2.txt，而目录xyz又不存在的话，就会抛出异常。
+		那么怎么自动创建xyz目录？
+		如果是多层目录 d:/xyz/abc/def/lol2.txt 呢？*/
 		 try {
 	            File f = new File("c:/LOLFolder/xy/lol2.txt");
 	            if(f.getParentFile().exists()==false) {

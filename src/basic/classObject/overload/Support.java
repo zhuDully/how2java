@@ -3,39 +3,39 @@ package basic.classObject.overload;
 import basic.classObject.Hero;
 
 /**
- * Éè¼ÆÒ»¸öÀàSupport (¸¨ÖúÓ¢ĞÛ)¼Ì³ĞHero£¬Ìá¹©Ò»¸öheal(ÖÎÁÆ)·½·¨
-¶ÔSupportµÄheal·½·¨½øĞĞÖØÔØ
+ * è®¾è®¡ä¸€ä¸ªç±»Support (è¾…åŠ©è‹±é›„)ç»§æ‰¿Heroï¼Œæä¾›ä¸€ä¸ªheal(æ²»ç–—)æ–¹æ³•
+å¯¹Supportçš„healæ–¹æ³•è¿›è¡Œé‡è½½
 heal() 
-heal(Hero h) //ÎªÖ¸¶¨µÄÓ¢ĞÛ¼ÓÑª
-heal(Hero h, int hp) //ÎªÖ¸¶¨µÄÓ¢ĞÛ¼ÓÁËhpµÄÑª
+heal(Hero h) //ä¸ºæŒ‡å®šçš„è‹±é›„åŠ è¡€
+heal(Hero h, int hp) //ä¸ºæŒ‡å®šçš„è‹±é›„åŠ äº†hpçš„è¡€
  * @author zhu_dully
  *
  */
 public class Support extends Hero{
 	public void heal() {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 		this.hp += 50;
 	}
 	
 	public void heal(Hero h) {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 		h.hp += 60;
-		System.out.println("1¸ø"+h.name+"¼Ó60µÄhp£»");
+		System.out.println("1ç»™"+h.name+"åŠ 60çš„hpï¼›");
 	}
 	
 	public void heal(Hero h, int hp) {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 		h.hp += hp;
-		System.out.println("2¸ø"+h.name+"¼Ó"+hp+"µÄhp£»");
+		System.out.println("2ç»™"+h.name+"åŠ "+hp+"çš„hpï¼›");
 	}
 	
-	//±àÒë±¨´í£¬¿É±ä²ÎÊıÀàĞÍÓ¦¸Ã×÷Îª²ÎÊıÁĞ±íµÄ×îºóÒ»Ïî  
+	//ç¼–è¯‘æŠ¥é”™ï¼Œå¯å˜å‚æ•°ç±»å‹åº”è¯¥ä½œä¸ºå‚æ•°åˆ—è¡¨çš„æœ€åä¸€é¡¹  
 	public void heal(int hp, Hero... h) {
 		Hero hero;
 		for (int i = 0; i < h.length; i++) {
 			hero = h[i];
 			hero.hp += hp;
-			System.out.println("¸ø"+hero.name+"¼Ó"+hp+"µÄhp£»");
+			System.out.println("ç»™"+hero.name+"åŠ "+hp+"çš„hpï¼›");
 		}
 	}
 	public static void main(String[] args) {

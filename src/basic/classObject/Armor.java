@@ -1,30 +1,30 @@
 package basic.classObject;
 
 /**
-¼Ì³ÐItemÀà£¬²¢ÇÒ¶îÍâÌá¹©Ò»¸öÊôÐÔac: »¤¼×µÈ¼¶ intÀàÐÍ
+ç»§æ‰¿Itemç±»ï¼Œå¹¶ä¸”é¢å¤–æä¾›ä¸€ä¸ªå±žæ€§ac: æŠ¤ç”²ç­‰çº§ intç±»åž‹
 * @author zhu_dully
  *
  */
 public class Armor extends Item{
-	int ac; //¹¥»÷Á¦
+	int ac; //æ”»å‡»åŠ›
 	
 	public static void main(String[] args) {
 		/*
-		 * ÊµÀý»¯³öÁ½¼þ»¤¼×
-			Ãû³Æ ¼Û¸ñ »¤¼×µÈ¼¶
-			²¼¼× 300 15
-			Ëø×Ó¼× 500 40
+		 * å®žä¾‹åŒ–å‡ºä¸¤ä»¶æŠ¤ç”²
+			åç§° ä»·æ ¼ æŠ¤ç”²ç­‰çº§
+			å¸ƒç”² 300 15
+			é”å­ç”² 500 40
 		 */
 		Armor buJia = new Armor();
-		buJia.ac = 15; //acÊôÐÔÔÚÀàWeaponÖÐÐÂÉè¼ÆµÄ
+		buJia.ac = 15; //acå±žæ€§åœ¨ç±»Weaponä¸­æ–°è®¾è®¡çš„
         
-		buJia.name = "²¼¼× ";//nameÊôÐÔ£¬ÊÇ´ÓItemÖÐ¼Ì³ÐÀ´µÄ£¬¾Í²»ÐèÒªÖØ¸´Éè¼ÆÁË
+		buJia.name = "å¸ƒç”² ";//nameå±žæ€§ï¼Œæ˜¯ä»ŽItemä¸­ç»§æ‰¿æ¥çš„ï¼Œå°±ä¸éœ€è¦é‡å¤è®¾è®¡äº†
 		buJia.price = 300;
 		
 		Armor suoZijia = new Armor();
-		buJia.ac = 40; //acÊôÐÔÔÚÀàWeaponÖÐÐÂÉè¼ÆµÄ
+		buJia.ac = 40; //acå±žæ€§åœ¨ç±»Weaponä¸­æ–°è®¾è®¡çš„
         
-		buJia.name = "Ëø×Ó¼× ";//nameÊôÐÔ£¬ÊÇ´ÓItemÖÐ¼Ì³ÐÀ´µÄ£¬¾Í²»ÐèÒªÖØ¸´Éè¼ÆÁË
+		buJia.name = "é”å­ç”² ";//nameå±žæ€§ï¼Œæ˜¯ä»ŽItemä¸­ç»§æ‰¿æ¥çš„ï¼Œå°±ä¸éœ€è¦é‡å¤è®¾è®¡äº†
 		buJia.price = 500;
 	}
 }

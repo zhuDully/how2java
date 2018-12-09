@@ -1,19 +1,19 @@
 package basic.classObject;
 
 /**
-ÎäÆ÷ÀàWeapon£¨¼Ì³ĞÀàItem£©
-Weapon×Ô¼ºÃ»ÓĞÉè¼ÆnameºÍprice,µ«ÊÇÍ¨¹ı¼Ì³ĞItemÀà£¬Ò²¾ß±¸ÁËnameºÍpriceÊôĞÔ	
+æ­¦å™¨ç±»Weaponï¼ˆç»§æ‰¿ç±»Itemï¼‰
+Weaponè‡ªå·±æ²¡æœ‰è®¾è®¡nameå’Œprice,ä½†æ˜¯é€šè¿‡ç»§æ‰¿Itemç±»ï¼Œä¹Ÿå…·å¤‡äº†nameå’Œpriceå±æ€§	
  * @author zhu_dully
  *
  */
 public class Weapon extends Item{
-	int damage; //¹¥»÷Á¦
+	int damage; //æ”»å‡»åŠ›
 	
 	public static void main(String[] args) {
 		Weapon infinityEdge = new Weapon();
-		infinityEdge.damage = 65; //damageÊôĞÔÔÚÀàWeaponÖĞĞÂÉè¼ÆµÄ
+		infinityEdge.damage = 65; //damageå±æ€§åœ¨ç±»Weaponä¸­æ–°è®¾è®¡çš„
         
-        infinityEdge.name = "ÎŞ¾¡Ö®ÈĞ";//nameÊôĞÔ£¬ÊÇ´ÓItemÖĞ¼Ì³ĞÀ´µÄ£¬¾Í²»ĞèÒªÖØ¸´Éè¼ÆÁË
+        infinityEdge.name = "æ— å°½ä¹‹åˆƒ";//nameå±æ€§ï¼Œæ˜¯ä»Itemä¸­ç»§æ‰¿æ¥çš„ï¼Œå°±ä¸éœ€è¦é‡å¤è®¾è®¡äº†
         infinityEdge.price = 3600;
 	}
 }

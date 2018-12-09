@@ -5,26 +5,26 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-/**ÒÔ×Ö½ÚÁ÷µÄĞÎÊ½ÏòÎÄ¼şĞ´ÈëÊı¾İ ÖĞµÄÀı×Ó£¬µ±lol2.txt²»´æÔÚµÄÊ±ºò£¬ÊÇ»á×Ô¶¯´´½¨lol2.txtÎÄ¼şµÄ¡£
-µ«ÊÇ£¬Èç¹ûÊÇĞ´ÈëÊı¾İµ½c:/xyz/lol2.txt£¬¶øÄ¿Â¼xyzÓÖ²»´æÔÚµÄ»°£¬¾Í»áÅ×³öÒì³£¡£
-ÄÇÃ´ÔõÃ´×Ô¶¯´´½¨xyzÄ¿Â¼£¿
-Èç¹ûÊÇ¶à²ãÄ¿Â¼ c:/xyz/abc/def/lol2.txt ÄØ£¿*/
+/**ä»¥å­—èŠ‚æµçš„å½¢å¼å‘æ–‡ä»¶å†™å…¥æ•°æ® ä¸­çš„ä¾‹å­ï¼Œå½“lol2.txtä¸å­˜åœ¨çš„æ—¶å€™ï¼Œæ˜¯ä¼šè‡ªåŠ¨åˆ›å»ºlol2.txtæ–‡ä»¶çš„ã€‚
+ä½†æ˜¯ï¼Œå¦‚æœæ˜¯å†™å…¥æ•°æ®åˆ°c:/xyz/lol2.txtï¼Œè€Œç›®å½•xyzåˆä¸å­˜åœ¨çš„è¯ï¼Œå°±ä¼šæŠ›å‡ºå¼‚å¸¸ã€‚
+é‚£ä¹ˆæ€ä¹ˆè‡ªåŠ¨åˆ›å»ºxyzç›®å½•ï¼Ÿ
+å¦‚æœæ˜¯å¤šå±‚ç›®å½• c:/xyz/abc/def/lol2.txt å‘¢ï¼Ÿ*/
 public class Test {
 	public static void main(String[] args) {
-		File file = new File("./LOLFolder/lol.txt");// ´´½¨»ùÓÚÎÄ¼şµÄÊäÈëÁ÷
+		File file = new File("./LOLFolder/lol.txt");// åˆ›å»ºåŸºäºæ–‡ä»¶çš„è¾“å…¥æµ
 		//File file = new File("./mywork/work.txt");
 
 		FileOutputStream out = null;
 	    try {
 	        if (!file.exists()) {
-	            // ÏÈµÃµ½ÎÄ¼şµÄÉÏ¼¶Ä¿Â¼£¬²¢´´½¨ÉÏ¼¶Ä¿Â¼£¬ÔÚ´´½¨ÎÄ¼ş
+	            // å…ˆå¾—åˆ°æ–‡ä»¶çš„ä¸Šçº§ç›®å½•ï¼Œå¹¶åˆ›å»ºä¸Šçº§ç›®å½•ï¼Œåœ¨åˆ›å»ºæ–‡ä»¶
 	            file.getParentFile().mkdir();
 	            file.createNewFile();
 	        }
 
-	        //´´½¨ÎÄ¼şÊä³öÁ÷
+	        //åˆ›å»ºæ–‡ä»¶è¾“å‡ºæµ
 	        out = new FileOutputStream(file);
-	        //½«×Ö·û´®×ª»¯Îª×Ö½Ú
+	        //å°†å­—ç¬¦ä¸²è½¬åŒ–ä¸ºå­—èŠ‚
 	        byte[] byteArr = "FileInputStream Test".getBytes();
 	        out.write(byteArr);
 	        out.close();

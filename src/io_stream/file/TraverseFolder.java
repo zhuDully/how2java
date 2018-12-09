@@ -10,7 +10,7 @@ public class TraverseFolder {
 		new TraverseFolder().traverseFolder2(path);
 	}
 
-	/** 1. ²»Ê¹ÓÃµİ¹éµÄ·½·¨µ÷ÓÃ */
+	/** 1. ä¸ä½¿ç”¨é€’å½’çš„æ–¹æ³•è°ƒç”¨ */
 	public void traverseFolder1(String path) {
 		int fileNum = 0, folderNum = 0;
 		File file = new File(path);
@@ -23,66 +23,66 @@ public class TraverseFolder {
 			 */
 			for (File file2 : files) {
 				if (file2.isDirectory()) {
-					System.out.println("ÎÄ¼ş¼Ğ:" + file2.getAbsolutePath());
-					list.add(file2);// ÔİÊ±°ÑÎÄ¼ş¼Ğ¼ÓÈëlist£¬ºóĞø´¦Àí
+					System.out.println("æ–‡ä»¶å¤¹:" + file2.getAbsolutePath());
+					list.add(file2);// æš‚æ—¶æŠŠæ–‡ä»¶å¤¹åŠ å…¥listï¼Œåç»­å¤„ç†
 					fileNum++;
 				} else {
-					System.out.println("ÎÄ¼ş:" + file2.getAbsolutePath());
+					System.out.println("æ–‡ä»¶:" + file2.getAbsolutePath());
 					folderNum++;
 				}
 			}
-			// ±éÀú×ÓÎÄ¼ş¼ĞÀïÎÄ¼ş
+			// éå†å­æ–‡ä»¶å¤¹é‡Œæ–‡ä»¶
 			File temp_file;
 			while (!list.isEmpty()) {
-				temp_file = list.removeFirst();// ÄÃ³ö£¨µ«²»·Å»Ø£©listµÄµÚÒ»¸öÔªËØ
+				temp_file = list.removeFirst();// æ‹¿å‡ºï¼ˆä½†ä¸æ”¾å›ï¼‰listçš„ç¬¬ä¸€ä¸ªå…ƒç´ 
 				files = temp_file.listFiles();
 				for (File file2 : files) {
 					if (file2.isDirectory()) {
-						System.out.println("ÎÄ¼ş¼Ğ:" + file2.getAbsolutePath());
-						list.add(file2);// ÔÚ×ÓÎÄ¼ş¼Ğ·¢ÏÖÎÄ¼ş¼Ğ£¬ÄÇÃ´¼ÌĞø°ÑÎÄ¼ş¼Ğ¼ÓÈëlist£¬ºóĞø´¦Àí
+						System.out.println("æ–‡ä»¶å¤¹:" + file2.getAbsolutePath());
+						list.add(file2);// åœ¨å­æ–‡ä»¶å¤¹å‘ç°æ–‡ä»¶å¤¹ï¼Œé‚£ä¹ˆç»§ç»­æŠŠæ–‡ä»¶å¤¹åŠ å…¥listï¼Œåç»­å¤„ç†
 						fileNum++;
 					} else {
-						System.out.println("ÎÄ¼ş:" + file2.getAbsolutePath());
+						System.out.println("æ–‡ä»¶:" + file2.getAbsolutePath());
 						folderNum++;
 					}
 				}
 			}
 		} else {
-			System.out.println("ÎÄ¼ş²»´æÔÚ!");
+			System.out.println("æ–‡ä»¶ä¸å­˜åœ¨!");
 		}
-		System.out.println("ÎÄ¼ş¼Ğ¹²ÓĞ:" + folderNum + ",ÎÄ¼ş¹²ÓĞ:" + fileNum);
+		System.out.println("æ–‡ä»¶å¤¹å…±æœ‰:" + folderNum + ",æ–‡ä»¶å…±æœ‰:" + fileNum);
 	}
 
-	/** 2. Ê¹ÓÃµİ¹éµÄ·½·¨µ÷ÓÃ */
+	/** 2. ä½¿ç”¨é€’å½’çš„æ–¹æ³•è°ƒç”¨ */
 	public void traverseFolder2(String path) {
 		File file = new File(path);
 		if (file.exists()) {
 			File[] files = file.listFiles();
 			if (files.length == 0) {
-				System.out.println("ÎÄ¼ş¼ĞÊÇ¿ÕµÄ!");
+				System.out.println("æ–‡ä»¶å¤¹æ˜¯ç©ºçš„!");
 				return;
 			} else {
 				for (File file2 : files) {
 					if (file2.isDirectory()) {
-						System.out.println("\nÎÄ¼ş¼Ğ:" + file2.getAbsolutePath());
+						System.out.println("\næ–‡ä»¶å¤¹:" + file2.getAbsolutePath());
 						traverseFolder2(file2.getAbsolutePath());
 						System.out.println();
 					} else {
-						System.out.println("ÎÄ¼ş:" + file2.getAbsolutePath());
+						System.out.println("æ–‡ä»¶:" + file2.getAbsolutePath());
 					}
 				}
 			}
 		} else {
-			System.out.println("ÎÄ¼ş²»´æÔÚ!");
+			System.out.println("æ–‡ä»¶ä¸å­˜åœ¨!");
 		}
 	}
-	/*out£ºÓöµ½ÎÄ¼şÖ±½ÓÊäÈëËüµÄ¾ø¶ÔÂ·¾¶£¬Óöµ½ÎÄ¼ş¼ĞÄÇÃ´µ÷ÓÃ±¾ÉítraverseFolder2·½·¨£¨¼´µİ¹é£©
-	ÎÄ¼ş:C:\LOLFolder\DOTA.exe
-	ÎÄ¼ş:C:\LOLFolder\setuperr.log
-	ÎÄ¼ş¼Ğ:C:\LOLFolder\skin
-	ÎÄ¼ş:C:\LOLFolder\skin\garen.ski
-	ÎÄ¼ş:C:\LOLFolder\skin\garen.ski.bak
-	ÎÄ¼ş:C:\LOLFolder\system.ini*/
+	/*outï¼šé‡åˆ°æ–‡ä»¶ç›´æ¥è¾“å…¥å®ƒçš„ç»å¯¹è·¯å¾„ï¼Œé‡åˆ°æ–‡ä»¶å¤¹é‚£ä¹ˆè°ƒç”¨æœ¬èº«traverseFolder2æ–¹æ³•ï¼ˆå³é€’å½’ï¼‰
+	æ–‡ä»¶:C:\LOLFolder\DOTA.exe
+	æ–‡ä»¶:C:\LOLFolder\setuperr.log
+	æ–‡ä»¶å¤¹:C:\LOLFolder\skin
+	æ–‡ä»¶:C:\LOLFolder\skin\garen.ski
+	æ–‡ä»¶:C:\LOLFolder\skin\garen.ski.bak
+	æ–‡ä»¶:C:\LOLFolder\system.ini*/
 	
 	
 }

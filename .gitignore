@@ -1,0 +1,6 @@
+*.class
+*.bak
+
+/.settings
+
+/bin

@@ -8,27 +8,27 @@ import java.util.Arrays;
 public class SubStream {
 
 	public static void main(String[] args) {
-		// ÏÈ½«Ô´ÎÄ¼ş¶ÁÈ¡µ½ÄÚ´æÖĞ
+		// å…ˆå°†æºæ–‡ä»¶è¯»å–åˆ°å†…å­˜ä¸­
 		int eachSize = 100 * 1024;
 		File srcFile = new File("c:/LOLFolder/eclipse.txt");
 		splitFile(srcFile, eachSize);
 	}
 
 	public static void splitFile(File srcFile, int eachSize) {
-		// ÅĞ¶ÏÎÄ¼şÊÇ·ñ·ûºÏ²ğ·ÖÒªÇó
+		// åˆ¤æ–­æ–‡ä»¶æ˜¯å¦ç¬¦åˆæ‹†åˆ†è¦æ±‚
 		if (srcFile.length() == 0) {
-			throw new RuntimeException("ÎÄ¼ş²»·ûºÏ²ğ·ÖÒªÇó");
+			throw new RuntimeException("æ–‡ä»¶ä¸ç¬¦åˆæ‹†åˆ†è¦æ±‚");
 		}
 		byte[] fileContent = new byte[(int) srcFile.length()];
 		try {
-			// ½«ÎÄ¼şÄÚÈİ¶ÁÈ¡µ½ÄÚ´æÖĞ
+			// å°†æ–‡ä»¶å†…å®¹è¯»å–åˆ°å†…å­˜ä¸­
 			FileInputStream fis = new FileInputStream(srcFile);
 			fis.read(fileContent);
 			fis.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		// ¼ÆËãÒª´ÎÒª²ğ·ÖÎª¶àÉÙ·İ
+		// è®¡ç®—è¦æ¬¡è¦æ‹†åˆ†ä¸ºå¤šå°‘ä»½
 		int fileNumber;
 		if (fileContent.length % eachSize == 0) {
 			fileNumber = fileContent.length / eachSize;
@@ -38,10 +38,10 @@ public class SubStream {
 
 		for (int i = 0; i < fileNumber; i++) {
 			String fileName = srcFile.getName() + "-" + i + ".txt";
-			File fi = new File(srcFile.getParent(), fileName);// ÔÚµ±Ç°ÎÄ¼şÂ·¾¶ÏÂ´´½¨²ğ·ÖµÄÎÄ¼ş
+			File fi = new File(srcFile.getParent(), fileName);// åœ¨å½“å‰æ–‡ä»¶è·¯å¾„ä¸‹åˆ›å»ºæ‹†åˆ†çš„æ–‡ä»¶
 			byte[] eachContent;
 
-			// ½«Ô´ÎÄ¼şÄÚÈİ¸´ÖÆµ½²ğ·ÖµÄÎÄ¼şÖĞ
+			// å°†æºæ–‡ä»¶å†…å®¹å¤åˆ¶åˆ°æ‹†åˆ†çš„æ–‡ä»¶ä¸­
 			if (i != fileNumber - 1) {
 				eachContent = Arrays.copyOfRange(fileContent, eachSize * i, eachSize * (i + 1));
 			} else {
@@ -52,7 +52,7 @@ public class SubStream {
 				FileOutputStream fos = new FileOutputStream(fi);
 				fos.write(eachContent);
 				fos.close();
-				System.out.printf("Êä³ö×ÓÎÄ¼ş %s,Æä´óĞ¡ÊÇ %d,Ã¿¸öµÄ´óĞ¡ÊÇ%d\n", fi.getAbsoluteFile(), fi.length(), eachContent.length);
+				System.out.printf("è¾“å‡ºå­æ–‡ä»¶ %s,å…¶å¤§å°æ˜¯ %d,æ¯ä¸ªçš„å¤§å°æ˜¯%d\n", fi.getAbsoluteFile(), fi.length(), eachContent.length);
 			} catch (Exception e) {
 				// TODO: handle exception
 				e.printStackTrace();

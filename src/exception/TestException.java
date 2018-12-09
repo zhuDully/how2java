@@ -5,18 +5,18 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 /**
- * ±ÈÈçÒª´ò¿ªdÅÌµÄLOL.exeÎÄ¼ş£¬Õâ¸öÎÄ¼şÊÇÓĞ¿ÉÄÜ²»´æÔÚµÄ 
-JavaÖĞÍ¨¹ı new FileInputStream(f) ÊÔÍ¼´ò¿ªÄ³ÎÄ¼ş£¬
-¾ÍÓĞ¿ÉÄÜÅ×³öÎÄ¼ş²»´æÔÚÒì³£FileNotFoundException 
-Èç¹û²»´¦Àí¸ÃÒì³££¬¾Í»áÓĞ±àÒë´íÎó 
+ * æ¯”å¦‚è¦æ‰“å¼€dç›˜çš„LOL.exeæ–‡ä»¶ï¼Œè¿™ä¸ªæ–‡ä»¶æ˜¯æœ‰å¯èƒ½ä¸å­˜åœ¨çš„ 
+Javaä¸­é€šè¿‡ new FileInputStream(f) è¯•å›¾æ‰“å¼€æŸæ–‡ä»¶ï¼Œ
+å°±æœ‰å¯èƒ½æŠ›å‡ºæ–‡ä»¶ä¸å­˜åœ¨å¼‚å¸¸FileNotFoundException 
+å¦‚æœä¸å¤„ç†è¯¥å¼‚å¸¸ï¼Œå°±ä¼šæœ‰ç¼–è¯‘é”™è¯¯ 
  * @author zhu_dully
  *
  */
 public class TestException {
 	public static void main(String[] args) throws FileNotFoundException{
 		File f = new File("d:/LoL.exe");
-		 //ÊÔÍ¼´ò¿ªÎÄ¼şLOL.exe£¬»áÅ×³öFileNotFoundException£¬Èç¹û²»´¦Àí¸ÃÒì³££¬¾Í»áÓĞ±àÒë´íÎó
-		System.out.println("ÊÔÍ¼´ò¿ª d:/LOL.exe");
+		 //è¯•å›¾æ‰“å¼€æ–‡ä»¶LOL.exeï¼Œä¼šæŠ›å‡ºFileNotFoundExceptionï¼Œå¦‚æœä¸å¤„ç†è¯¥å¼‚å¸¸ï¼Œå°±ä¼šæœ‰ç¼–è¯‘é”™è¯¯
+		System.out.println("è¯•å›¾æ‰“å¼€ d:/LOL.exe");
 		new FileInputStream(f);
 		
 	}

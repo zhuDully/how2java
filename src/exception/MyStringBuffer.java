@@ -1,12 +1,12 @@
 package exception;
 
 public class MyStringBuffer {
-	int capacity = 16;// Ä¬ÈÏÈİÁ¿
+	int capacity = 16;// é»˜è®¤å®¹é‡
 	int length = 0;
 	char[] value;
 
 	public MyStringBuffer() {
-		// TODO ×Ô¶¯Éú³ÉµÄ¹¹Ôìº¯Êı´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ„é€ å‡½æ•°å­˜æ ¹
 		value = new char[capacity];
 	}
 
@@ -15,16 +15,16 @@ public class MyStringBuffer {
 		if (null == str) {
 			return;
 		}
-		// Ä¬ÈÏÈİÁ¿ÊÇ·ñ±ÈstrµÄ³¤¶ÈĞ¡
+		// é»˜è®¤å®¹é‡æ˜¯å¦æ¯”strçš„é•¿åº¦å°
 		if (capacity < str.length()) {
-			// ½«Ä¬ÈÏÈİÆ÷³¤¶ÈÀ©´ó2±¶
+			// å°†é»˜è®¤å®¹å™¨é•¿åº¦æ‰©å¤§2å€
 			capacity = value.length * 2;
 			value = new char[capacity];
 		}
-		// Ä¬ÈÏÈİÁ¿ÊÇ·ñ±ÈstrµÄ³¤¶È´ó
+		// é»˜è®¤å®¹é‡æ˜¯å¦æ¯”strçš„é•¿åº¦å¤§
 		if (capacity >= str.length()) {
-			// src:Ô´Êı×é£» srcPos:Ô´Êı×éÒª¸´ÖÆµÄÆğÊ¼Î»ÖÃ£»
-			// dest:Ä¿µÄÊı×é£»destPos:Ä¿µÄÊı×é·ÅÖÃµÄÆğÊ¼Î»ÖÃ£» length:¸´ÖÆµÄ³¤¶È¡£
+			// src:æºæ•°ç»„ï¼› srcPos:æºæ•°ç»„è¦å¤åˆ¶çš„èµ·å§‹ä½ç½®ï¼›
+			// dest:ç›®çš„æ•°ç»„ï¼›destPos:ç›®çš„æ•°ç»„æ”¾ç½®çš„èµ·å§‹ä½ç½®ï¼› length:å¤åˆ¶çš„é•¿åº¦ã€‚
 			System.arraycopy(str.toCharArray(), 0, value, 0, str.length());
 		}
 		length = str.length();
@@ -75,30 +75,30 @@ public class MyStringBuffer {
 	}
 	/**
 	 * 
-	 * @param start ¿ªÊ¼Ë÷ÒıÖµ
-	 * @param end	½áÊøË÷ÒıÖµ
+	 * @param start å¼€å§‹ç´¢å¼•å€¼
+	 * @param end	ç»“æŸç´¢å¼•å€¼
 	 * @throws Exception
 	 */
 	public void delete(int start, int end) throws Exception {
-		// ±ß½çÌõ¼şÅĞ¶Ï
+		// è¾¹ç•Œæ¡ä»¶åˆ¤æ–­
 		if (start < 0) {
-			throw new IndexIsNagetiveException("ÏÂ±êÎª¸ºÒì³£");
+			throw new IndexIsNagetiveException("ä¸‹æ ‡ä¸ºè´Ÿå¼‚å¸¸");
 		}
 
 		if (start > length) {
-			throw new IndexIsOutofRangeException("ÏÂ±ê³¬³ö·¶Î§Òì³£");
+			throw new IndexIsOutofRangeException("ä¸‹æ ‡è¶…å‡ºèŒƒå›´å¼‚å¸¸");
 		}
 
 		if (end < 0) {
-			throw new IndexIsNagetiveException("ÏÂ±êÎª¸ºÒì³£");
+			throw new IndexIsNagetiveException("ä¸‹æ ‡ä¸ºè´Ÿå¼‚å¸¸");
 		}
 
 		if (end > length) {
-			throw new IndexIsOutofRangeException("ÏÂ±ê³¬³ö·¶Î§Òì³£");
+			throw new IndexIsOutofRangeException("ä¸‹æ ‡è¶…å‡ºèŒƒå›´å¼‚å¸¸");
 		}
 
 		if (start >= end) {
-			throw new IndexIsOutofRangeException("ÏÂ±ê³¬³ö·¶Î§Òì³£");
+			throw new IndexIsOutofRangeException("ä¸‹æ ‡è¶…å‡ºèŒƒå›´å¼‚å¸¸");
 		}
 
 		System.arraycopy(value, end, value, start, length - end);
@@ -107,61 +107,61 @@ public class MyStringBuffer {
 	}
 	/**
 	 * 
-	 * @param pos ²åÈëË÷ÒıÖµ
-	 * @param b	  ²åÈë×Ö·û´®
+	 * @param pos æ’å…¥ç´¢å¼•å€¼
+	 * @param b	  æ’å…¥å­—ç¬¦ä¸²
 	 * @throws Exception
 	 */
 	public void insert(int pos, String b) throws Exception {
 
-		// ±ß½çÌõ¼şÅĞ¶Ï
+		// è¾¹ç•Œæ¡ä»¶åˆ¤æ–­
 		if (pos < 0) {
-			throw new IndexIsNagetiveException("ÏÂ±êÎª¸ºÒì³£");
+			throw new IndexIsNagetiveException("ä¸‹æ ‡ä¸ºè´Ÿå¼‚å¸¸");
 		}
 
 		if (pos > length) {
-			throw new IndexIsOutofRangeException("ÏÂ±ê³¬³ö·¶Î§Òì³£");
+			throw new IndexIsOutofRangeException("ä¸‹æ ‡è¶…å‡ºèŒƒå›´å¼‚å¸¸");
 		}
 
 		if (null == b) {
-			throw new NullPointerException("Îª¿Õ");
+			throw new NullPointerException("ä¸ºç©º");
 		}
 
-		// À©Èİ
+		// æ‰©å®¹
 		while (length + b.length() > capacity) {
-			//£¨Ô­³¤¶È+¼ÓÈë×Ö·û´®³¤¶È£©*1.5£¬È»ºóÈ¡ÕûÊı
+			//ï¼ˆåŸé•¿åº¦+åŠ å…¥å­—ç¬¦ä¸²é•¿åº¦ï¼‰*1.5ï¼Œç„¶åå–æ•´æ•°
 			capacity = (int) ((length + b.length()) * 1.5f);
 			char[] newValue = new char[capacity];
-			// src:Ô´Êı×é£» srcPos:Ô´Êı×éÒª¸´ÖÆµÄÆğÊ¼Î»ÖÃ£»
-			// dest:Ä¿µÄÊı×é£»destPos:Ä¿µÄÊı×é·ÅÖÃµÄÆğÊ¼Î»ÖÃ£» length:¸´ÖÆµÄ³¤¶È¡£
+			// src:æºæ•°ç»„ï¼› srcPos:æºæ•°ç»„è¦å¤åˆ¶çš„èµ·å§‹ä½ç½®ï¼›
+			// dest:ç›®çš„æ•°ç»„ï¼›destPos:ç›®çš„æ•°ç»„æ”¾ç½®çš„èµ·å§‹ä½ç½®ï¼› length:å¤åˆ¶çš„é•¿åº¦ã€‚
 			System.arraycopy(value, 0, newValue, 0, length);
 			value = newValue;
 		}
 
 		char[] cs = b.toCharArray();
 
-		// ÏÈ°ÑÒÑ¾­´æÔÚµÄÊı¾İÍùºóÒÆ
+		// å…ˆæŠŠå·²ç»å­˜åœ¨çš„æ•°æ®å¾€åç§»
 		System.arraycopy(value, pos, value, pos + cs.length, length - pos);
-		// °ÑÒª²åÈëµÄÊı¾İ²åÈëµ½Ö¸¶¨Î»ÖÃ
+		// æŠŠè¦æ’å…¥çš„æ•°æ®æ’å…¥åˆ°æŒ‡å®šä½ç½®
 		System.arraycopy(cs, 0, value, pos, cs.length);
-		//¸üĞÂ³¤¶È
+		//æ›´æ–°é•¿åº¦
 		length = length + cs.length;
 
 	}
 
 	public static void main(String[] args) {
 		MyStringBuffer sb = new MyStringBuffer("there ligtht");
-		System.out.println("Ô­×Ö·û´®£º" + sb);
+		System.out.println("åŸå­—ç¬¦ä¸²ï¼š" + sb);
 		try {
 			sb.insert(-4, "let ");
 		} catch (Exception e) {
-			System.out.println("Òì³£µÄ¾ßÌåÔ­Òò£º" + e.getMessage());
+			System.out.println("å¼‚å¸¸çš„å…·ä½“åŸå› ï¼š" + e.getMessage());
 			e.printStackTrace();
 		}
-		System.out.println("\nÔ­×Ö·û´®£º" + sb);
+		System.out.println("\nåŸå­—ç¬¦ä¸²ï¼š" + sb);
 		try {
 			sb.delete(0, 44);
 		} catch (Exception e) {
-			System.out.println("Òì³£µÄ¾ßÌåÔ­Òò£º" + e.getMessage());
+			System.out.println("å¼‚å¸¸çš„å…·ä½“åŸå› ï¼š" + e.getMessage());
 			e.printStackTrace();
 		}
 		System.out.println(sb);

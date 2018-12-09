@@ -2,9 +2,9 @@ package io_stream.file;
 
 import java.io.File;
 /**
- * Ò»°ãËµÀ´²Ù×÷ÏµÍ³¶¼»á°²×°ÔÚCÅÌ£¬ËùÒÔ»áÓĞÒ»¸ö C:\WINDOWSÄ¿Â¼¡£
-±éÀúÕâ¸öÄ¿Â¼ÏÂËùÓĞµÄÎÄ¼ş(²»ÓÃ±éÀú×ÓÄ¿Â¼)
-ÕÒ³öÕâĞ©ÎÄ¼şÀï£¬×î´óµÄºÍ×îĞ¡(·Ç0)µÄÄÇ¸öÎÄ¼ş£¬´òÓ¡³öËûÃÇµÄÎÄ¼şÃû
+ * ä¸€èˆ¬è¯´æ¥æ“ä½œç³»ç»Ÿéƒ½ä¼šå®‰è£…åœ¨Cç›˜ï¼Œæ‰€ä»¥ä¼šæœ‰ä¸€ä¸ª C:\WINDOWSç›®å½•ã€‚
+éå†è¿™ä¸ªç›®å½•ä¸‹æ‰€æœ‰çš„æ–‡ä»¶(ä¸ç”¨éå†å­ç›®å½•)
+æ‰¾å‡ºè¿™äº›æ–‡ä»¶é‡Œï¼Œæœ€å¤§çš„å’Œæœ€å°(é0)çš„é‚£ä¸ªæ–‡ä»¶ï¼Œæ‰“å°å‡ºä»–ä»¬çš„æ–‡ä»¶å
  * @author zhu_dully
  *
  */
@@ -19,26 +19,26 @@ public class Test4 {
 
 	public static String getMaxAndMin(String path) {
 		File f1 = new File(path);
-		// ÒÔÎÄ¼şÊı×éµÄĞÎÊ½£¬·µ»Øµ±Ç°ÎÄ¼ş¼ĞÏÂµÄËùÓĞÎÄ¼ş£¨²»°üº¬×ÓÎÄ¼ş¼°×ÓÎÄ¼ş¼Ğ£©
+		// ä»¥æ–‡ä»¶æ•°ç»„çš„å½¢å¼ï¼Œè¿”å›å½“å‰æ–‡ä»¶å¤¹ä¸‹çš„æ‰€æœ‰æ–‡ä»¶ï¼ˆä¸åŒ…å«å­æ–‡ä»¶åŠå­æ–‡ä»¶å¤¹ï¼‰
 		File[] list = f1.listFiles();
-		System.out.println("µ±Ç°ÎÄ¼ş¼ĞÏÂµÄËùÓĞÎÄ¼ş:"+list.length);
+		System.out.println("å½“å‰æ–‡ä»¶å¤¹ä¸‹çš„æ‰€æœ‰æ–‡ä»¶:"+list.length);
 		if (list != null && list.length != 0) {
 			for (int i = 0; i < list.length; ++i) {
 
-				// ÄÃµ½×î´ó
-				if (!list[i].isDirectory()) {//ÊÇ·ñÊÇÎÄ¼ş¼Ğ
-					if (list[i].length() > max) {//ÎÄ¼ş³¤¶ÈÊÇ·ñ´óÓÚmax
+				// æ‹¿åˆ°æœ€å¤§
+				if (!list[i].isDirectory()) {//æ˜¯å¦æ˜¯æ–‡ä»¶å¤¹
+					if (list[i].length() > max) {//æ–‡ä»¶é•¿åº¦æ˜¯å¦å¤§äºmax
 						max = list[i].length();
 						maxName = list[i].getAbsolutePath();
 
 					}
 				} else {
-					System.out.println("µ±Ç°ÕıÔÚ±éÀú" + list[i].getAbsolutePath());
+					System.out.println("å½“å‰æ­£åœ¨éå†" + list[i].getAbsolutePath());
 					getMaxAndMin(list[i].getAbsolutePath());
 
 				}
 
-				// ÄÃµ½×îĞ¡
+				// æ‹¿åˆ°æœ€å°
 				if (!list[i].isDirectory()) {
 					if (list[i].length() < min && list[i].length() != 0) {
 						min = list[i].length();
@@ -49,6 +49,6 @@ public class Test4 {
 				}
 			}
 		}
-		return "×î´óµÄÎÄ¼şÊÇ" + maxName + ",Æä´óĞ¡ÊÇ" + max + "¸ö×Ö½Ú" + "\n" + "×îĞ¡µÄÎÄ¼şÊÇ" + minName + ",Æä´óĞ¡ÊÇ" + min + "¸ö×Ö½Ú";
+		return "æœ€å¤§çš„æ–‡ä»¶æ˜¯" + maxName + ",å…¶å¤§å°æ˜¯" + max + "ä¸ªå­—èŠ‚" + "\n" + "æœ€å°çš„æ–‡ä»¶æ˜¯" + minName + ",å…¶å¤§å°æ˜¯" + min + "ä¸ªå­—èŠ‚";
 	}
 }

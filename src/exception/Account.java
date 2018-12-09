@@ -4,15 +4,15 @@ public class Account {
 	double balance;
 	double deficit;
 	public Account() {
-		// TODO ×Ô¶¯Éú³ÉµÄ¹¹Ôìº¯Êı´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ„é€ å‡½æ•°å­˜æ ¹
 	}
 	public Account(double balance) {
-		// TODO ×Ô¶¯Éú³ÉµÄ¹¹Ôìº¯Êı´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ„é€ å‡½æ•°å­˜æ ¹
 		this.balance = balance;
 		deficit = 0;
 	}
 	/**
-	 * È¡Ç®
+	 * å–é’±
 	 * @param amt
 	 * @return
 	 */
@@ -20,11 +20,11 @@ public class Account {
 		double reAmt ;
 		reAmt = balance - amt;
 		if(reAmt < 0)
-			throw new OverdraftExcetpion("¸ÃÕË»§²»ÄÜÍ¸Ö§");
+			throw new OverdraftExcetpion("è¯¥è´¦æˆ·ä¸èƒ½é€æ”¯");
 		return reAmt;
 	}
 	/**
-	 * ´æÇ®
+	 * å­˜é’±
 	 * @param amt
 	 * @return
 	 */

@@ -4,46 +4,46 @@ import java.util.Arrays;
 
 public class Array {
 	public static void main(String[] args) {
-		//ÉùÃ÷Ò»¸öÊý×é
+		//å£°æ˜Žä¸€ä¸ªæ•°ç»„
 		int [] a;
-		//´´½¨Ò»¸ö³¤¶ÈÊÇ5µÄÊý×é£¬²¢ÇÒÊ¹ÓÃÒýÓÃaÖ¸Ïò¸ÃÊý×é
+		//åˆ›å»ºä¸€ä¸ªé•¿åº¦æ˜¯5çš„æ•°ç»„ï¼Œå¹¶ä¸”ä½¿ç”¨å¼•ç”¨aæŒ‡å‘è¯¥æ•°ç»„
         a = new int[5];
-        int[] b = new int[5]; //ÉùÃ÷µÄÍ¬Ê±£¬Ö¸ÏòÒ»¸öÊý×é
+        int[] b = new int[5]; //å£°æ˜Žçš„åŒæ—¶ï¼ŒæŒ‡å‘ä¸€ä¸ªæ•°ç»„
         
         /*
-         * Ê×ÏÈ´´½¨Ò»¸ö³¤¶ÈÊÇ5µÄÊý×é
-			È»ºó¸øÊý×éµÄÃ¿Ò»Î»¸³ÓèËæ»úÕûÊý
-			Í¨¹ýforÑ­»·£¬±éÀúÊý×é£¬ÕÒ³ö×îÐ¡µÄÒ»¸öÖµ³öÀ´
+         * é¦–å…ˆåˆ›å»ºä¸€ä¸ªé•¿åº¦æ˜¯5çš„æ•°ç»„
+			ç„¶åŽç»™æ•°ç»„çš„æ¯ä¸€ä½èµ‹äºˆéšæœºæ•´æ•°
+			é€šè¿‡forå¾ªçŽ¯ï¼ŒéåŽ†æ•°ç»„ï¼Œæ‰¾å‡ºæœ€å°çš„ä¸€ä¸ªå€¼å‡ºæ¥
          */
         for (int i = 0; i < a.length; i++) {
 			a[i] = (int) (Math.random() * 100);
 		}
         
-        System.out.println("Ô­ÅÅÐò£º ");
+        System.out.println("åŽŸæŽ’åºï¼š ");
         for (int i = 0; i < a.length; i++) {
 			System.out.print(a[i] + "\t");
 		}
         System.out.println();
         Arrays.sort(a);
-        System.out.println("ÅÅÐòºó£º ");
+        System.out.println("æŽ’åºåŽï¼š ");
         for (int i = 0; i < a.length; i++) {
 			System.out.print(a[i] + "\t");
 		}
         System.out.println();
-        System.out.println("±¾Á·Ï°µÄÄ¿µÄÊÇ£¬ÕÒ³ö×îÐ¡µÄÒ»¸öÖµ: " + a[0]);
-       /*µ÷ÓÃ ArraysÀà½øÐÐÊý×éÅÅÐò
-        * ËµÃ÷£º(1)ArraysÀàÖÐµÄsort()Ê¹ÓÃµÄÊÇ¡°¾­¹ýµ÷ÓÅµÄ¿ìËÙÅÅÐò·¨¡±;
-¡¡¡¡¡¡¡¡¡¡¡¡(2)±ÈÈçint[]£¬double[]£¬char[]µÈ»ùÊý¾ÝÀàÐÍµÄÊý×é£¬
-				ArraysÀàÖ®Ö»ÊÇÌá¹©ÁËÄ¬ÈÏµÄÉýÐòÅÅÁÐ£¬Ã»ÓÐÌá¹©ÏàÓ¦µÄ½µÐòÅÅÁÐ·½·¨¡£
-¡¡¡¡¡¡¡¡¡¡¡¡(3)Òª¶Ô»ù´¡ÀàÐÍµÄÊý×é½øÐÐ½µÐòÅÅÐò£¬ÐèÒª½«ÕâÐ©Êý×é×ª»¯Îª¶ÔÓ¦µÄ·â×°ÀàÊý×é£¬
-			ÈçInteger[]£¬Double[]£¬Character[]µÈ£¬¶ÔÕâÐ©ÀàÊý×é½øÐÐÅÅÐò¡£(
-			ÆäÊµ»¹²»ÈçÏÈ½øÐÐÉýÐòÅÅÐò£¬×Ô¼ºÔÚ×ªÎª½µÐò)¡£
+        System.out.println("æœ¬ç»ƒä¹ çš„ç›®çš„æ˜¯ï¼Œæ‰¾å‡ºæœ€å°çš„ä¸€ä¸ªå€¼: " + a[0]);
+       /*è°ƒç”¨ Arraysç±»è¿›è¡Œæ•°ç»„æŽ’åº
+        * è¯´æ˜Žï¼š(1)Arraysç±»ä¸­çš„sort()ä½¿ç”¨çš„æ˜¯â€œç»è¿‡è°ƒä¼˜çš„å¿«é€ŸæŽ’åºæ³•â€;
+ã€€ã€€ã€€ã€€ã€€ã€€(2)æ¯”å¦‚int[]ï¼Œdouble[]ï¼Œchar[]ç­‰åŸºæ•°æ®ç±»åž‹çš„æ•°ç»„ï¼Œ
+				Arraysç±»ä¹‹åªæ˜¯æä¾›äº†é»˜è®¤çš„å‡åºæŽ’åˆ—ï¼Œæ²¡æœ‰æä¾›ç›¸åº”çš„é™åºæŽ’åˆ—æ–¹æ³•ã€‚
+ã€€ã€€ã€€ã€€ã€€ã€€(3)è¦å¯¹åŸºç¡€ç±»åž‹çš„æ•°ç»„è¿›è¡Œé™åºæŽ’åºï¼Œéœ€è¦å°†è¿™äº›æ•°ç»„è½¬åŒ–ä¸ºå¯¹åº”çš„å°è£…ç±»æ•°ç»„ï¼Œ
+			å¦‚Integer[]ï¼ŒDouble[]ï¼ŒCharacter[]ç­‰ï¼Œå¯¹è¿™äº›ç±»æ•°ç»„è¿›è¡ŒæŽ’åºã€‚(
+			å…¶å®žè¿˜ä¸å¦‚å…ˆè¿›è¡Œå‡åºæŽ’åºï¼Œè‡ªå·±åœ¨è½¬ä¸ºé™åº)ã€‚
 			
-		ÓÃÄ¬ÈÏµÄÉýÐò¶ÔÊý×éÅÅÐò
-¡¡¡¡ 	º¯ÊýÔ­ÐÍ£ºstatic void sort(int[] a)   
-					¶ÔÖ¸¶¨µÄ int ÐÍÊý×é°´Êý×ÖÉýÐò½øÐÐÅÅÐò¡£
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡	static void sort(int[] a, int fromIndex, int toIndex)  
-					¶ÔÖ¸¶¨ int ÐÍÊý×éµÄÖ¸¶¨·¶Î§°´Êý×ÖÉýÐò½øÐÐÅÅÐò¡£¡¡
+		ç”¨é»˜è®¤çš„å‡åºå¯¹æ•°ç»„æŽ’åº
+ã€€ã€€ 	å‡½æ•°åŽŸåž‹ï¼šstatic void sort(int[] a)   
+					å¯¹æŒ‡å®šçš„ int åž‹æ•°ç»„æŒ‰æ•°å­—å‡åºè¿›è¡ŒæŽ’åºã€‚
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€	static void sort(int[] a, int fromIndex, int toIndex)  
+					å¯¹æŒ‡å®š int åž‹æ•°ç»„çš„æŒ‡å®šèŒƒå›´æŒ‰æ•°å­—å‡åºè¿›è¡ŒæŽ’åºã€‚ã€€
         * */
         
         
