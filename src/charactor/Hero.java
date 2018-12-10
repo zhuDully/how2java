@@ -33,7 +33,11 @@ public class Hero implements Comparable<Hero> {
 	public boolean matched() {
 		return this.hp > 100 && this.damage < 50;
 	}
-
+	
+	public int compareHero(Hero h1, Hero h2) {
+		return (int)(h1.hp -  h2.hp);
+	}
+	
 	@Override
 	public String toString() {
 		return "Hero [name=" + name + ", hp=" + hp + ", damage=" + damage + "]\r\n";

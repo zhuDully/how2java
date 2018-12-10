@@ -3,6 +3,7 @@ package lambda;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.function.Supplier;
 
 import charactor.Hero;
 import charactor.HeroChecker;
@@ -43,8 +44,23 @@ public class Lambda_Demo1 {
        /* System.out.println("在Lambda表达式中调用容器中的对象Hero的方法matched");
         filter(heros, h -> h.matched());*/
         
+        /*//引用容器中的对象的方法
         System.out.println("matched恰好就是容器中的对象Hero的方法，那就可以进一步改写为");
-        filter(heros, Hero::matched);
+        filter(heros, Hero::matched);*/
+        
+        /*引用构造器*/
+        Supplier<List> s = new Supplier<List>() {
+            public List get() {
+                return new ArrayList();
+            }
+        };
+        
+        //匿名类
+        List list1 = getList(s);
+        //Lambda表达式
+        List list2 = getList(()->new ArrayList());
+        //引用构造器
+        List list3 = getList(ArrayList::new);
 	}
 	
 	/**普通方法：
@@ -73,5 +89,9 @@ public class Lambda_Demo1 {
 	
 	public boolean testHero1(Hero h) {
         return h.hp>100 && h.damage<50;
+    }
+	
+	public static List getList(Supplier<List> s){
+        return s.get();
     }
 }
